@@ -39,7 +39,7 @@ resource "aws_route" "private_routes" {
 
     route_table_id  = aws_route_table.private_route_table[each.key].id
     destination_cidr_block = "0.0.0.0/0"
-    instance_id = aws_instance.nat[each.key].id
+    network_interface_id = aws_instance.nat[each.key].primary_network_interface_id
 }
 
 
