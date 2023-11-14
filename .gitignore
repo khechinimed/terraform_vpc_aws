@@ -20,3 +20,5 @@ crash.log
 
 id_rsa*
 # End of https://www.gitignore.io/api/terraform
+
+./labuser.pem
