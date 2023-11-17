@@ -6,7 +6,7 @@ variable "aws_region" {
 variable "aws_keypair_file" {
   type        = string
   description = "Path of the public key"
-  default     = "labsuser.pem"
+  default     = "labsuser.pub"
 }
 
 variable "cidr_block" {
