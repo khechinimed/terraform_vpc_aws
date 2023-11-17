@@ -2,7 +2,7 @@ resource "aws_route_table" "public_route_table" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name = "${var.vpc_name}-route-table"
+    Name = "${var.vpc_name}-public"
     Environment = var.environment
     Owner = "Khechini Mohamed"
   }
@@ -28,11 +28,12 @@ resource "aws_route_table" "private_route_table" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name = "${var.vpc_name}-route-table"
+    Name = "${var.vpc_name}-private-${var.aws_region}${each.key}"
     Environment = var.environment
     Owner = "Khechini Mohamed"
   }
 }
+
 
 resource "aws_route" "private_routes" {
     for_each = var.availability_zones
