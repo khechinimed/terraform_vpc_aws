@@ -26,11 +26,11 @@ resource "aws_security_group_rule" "open-ssh-rule" {
   security_group_id = aws_security_group.name.id
 }
 
-resource "aws_security_group_rule" "internal-rule" {
-  type              = "ingress"
-  from_port         = 0
-  to_port           = 65535
-  protocol          = "tcp"
-  cidr_blocks       = [aws_vpc.vpc.cidr_block]
-  security_group_id = aws_security_group.name.id
-}
+# resource "aws_security_group_rule" "internal-rule" {
+#   type              = "ingress"
+#   from_port         = 0
+#   to_port           = 65535
+#   protocol          = "tcp"
+#   cidr_blocks       = [aws_vpc.vpc.cidr_block]
+#   security_group_id = aws_security_group.name.id
+# }
